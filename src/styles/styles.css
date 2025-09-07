@@ -381,9 +381,9 @@ section {
 
 #photo_presentation {
     background: var(--color_icons);
+    border-radius: 100%;
     width: 290px !important;
     height: 290px !important;
-    border-radius: 100%;
     overflow: hidden;
     margin-right: 20px;
     box-shadow: 0px 0px 100px #1f4c65;
@@ -408,9 +408,10 @@ section {
 
 #content_about_me {
     display: flex;
+    flex-direction: column;
     gap: 5%;
-    align-items: start;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
     width: 100%;
 }
 

@@ -1,33 +1,31 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const buttons = {
+    const buttons = { // Objeto con los botones del html
         frontend: document.getElementById("frontend_skill"),
         backend: document.getElementById("backend_skill"),
         widgets: document.getElementById("widgets_skill"),
     };
 
-    const skills = {
+    const skills = { // Objeto con los contenedores de skills del html
         frontend: document.getElementById("skills_frontend"),
         backend: document.getElementById("skills_backend"),
         widgets: document.getElementById("skills_widgets"),
     };
 
+    // Funcion de flecha para cambiar el color del boton que ejecuto el evento
     const changeColor = (button) => {
         Object.keys(buttons).forEach((key) => {
+            // Obtener una lista con las claves del objeto de botones
             buttons[key].style.background =
                 key === button ? "rgba(0, 0, 0, 0.5)" : "none";
         });
     };
 
-    const toggleSkills = (button) => {
-        Object.keys(skills).forEach((key) => {
-            skills[key].style.display = key === button ? "flex" : "none";
-        });
-    };
-
-    Object.keys(buttons).forEach((key) => {
+    // Creador de escuchadores de eventos de click para cada boton
+    Object.keys(buttons).forEach((key) => { // Obtener una lista con las claves del objeto de botones y crear eventos para cada uno
         buttons[key].addEventListener("click", () => {
-            changeColor(key);
-            Object.keys(skills).forEach((skillKey) => {
+            changeColor(key); // Ejecutar la funcion para cambiar el color del boton
+            Object.keys(skills).forEach((skillKey) => { 
+                // Obtener una lista con las claves del objeto de skills y recorrerlas hasta encontrar la ejecutadora del evento y cambiar su visibilidad
                 skills[skillKey].style.display =
                     skillKey === key ? "grid" : "none";
             });
@@ -40,19 +38,18 @@ document.addEventListener("DOMContentLoaded", () => {
     // Función para subir al tope de la página
     const upButton = document.querySelector(".up");
 
-    /* FUNCTION SHOW BUTTON (UP) */
-    window.addEventListener("scroll", () => {
-        if (window.scrollY > 300) {
-            upButton.style.display = "flex";
+    window.addEventListener("scroll", () => { // Escuchador del evento "scroll"
+        if (window.scrollY > 300) { // Si la pantalla ya supero 300px
+            upButton.style.display = "flex"; // Mostrar el boton
         } else {
-            upButton.style.display = "none";
+            upButton.style.display = "none"; // Ocultar el boton
         }
     });
 
-    upButton.addEventListener("click", () => {
+    upButton.addEventListener("click", () => { // Evento "click" al boton
         window.scrollTo({
             top: 0,
-            behavior: "smooth",
+            behavior: "smooth", // Efecto suave de desplazamiento
         });
     });
 });
