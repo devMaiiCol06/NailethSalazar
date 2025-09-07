@@ -9,7 +9,7 @@
 <br />
 
 <div align="center">
-  <img src="./src/assets/captures/Naileth Salazar - Portfolio.jpg" alt="Portfolio Screenshot" />
+  <img src="./src/assets/images/Naileth Salazar - Portfolio.png" alt="Portfolio Screenshot" />
 </div>
 
 ---
